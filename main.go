@@ -8,7 +8,7 @@ import (
 	"strconv"
 
 	"gopkg.in/macaron.v1"
-	"github.com/codeskyblue/go-reactjs-example/modules"
+	"github.com/ignatov/go-reactjs-example/modules"
 )
 
 type Configure struct {
