@@ -8,6 +8,9 @@ dev: clean
 
 prod: bundle binary
 
+fresh:
+	fresh -c fresh.conf
+
 bundle:
 	webpack -p --progress --config webpack.config.prod.js
 
