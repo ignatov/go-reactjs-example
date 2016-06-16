@@ -1,10 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var HelloWorld = require('./HelloWorld.jsx');
-
+var CommentBox = require('./CommentBox.jsx');
 
 ReactDOM.render(
-	<HelloWorld/>,
-	document.getElementById('content')
-)
+  <CommentBox url="/comments.json" pollInterval={2000} />,
+  document.getElementById('content')
+);

@@ -23,7 +23,7 @@ Open another terminal
 
 Open browser, navgate to <http://localhost:8000>
 
-Edit file `public/HelloWorld.jsx` Can see live change.
+Edit file `public/CommentBox.jsx` Can see live change.
 
 Good luck. ^0^
 
