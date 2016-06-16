@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"gopkg.in/macaron.v1"
 	"github.com/ignatov/go-reactjs-example/modules"
+	"gopkg.in/macaron.v1"
 )
 
 type Configure struct {
@@ -33,6 +33,23 @@ func init() {
 func initRouters() {
 	m.Get("/", func(ctx *macaron.Context) {
 		ctx.HTML(200, "homepage", nil)
+	})
+
+	m.Get("/comments", func(c *macaron.Context) {
+		type Comment struct {
+			Id     int    `json:"id,omitempty"`
+			Author string `json:"author,omitempty"`
+			Text   string `json:"text,omitempty"`
+		}
+
+		comments := [...]Comment{
+			Comment{Id: 1, Author: "Pete Hunt", Text: "This is one comment"},
+			Comment{Id: 2, Author: "Jordan Walke", Text: "This is *another* comment"},
+			Comment{Id: 3, Author: "Jordan Walke", Text: "This is comment"},
+			Comment{Id: 4, Author: "Jordan W1234alkeasdad", Text: "This is comment"},
+		}
+
+		c.JSON(200, comments)
 	})
 
 	ReloadProxy := func(w http.ResponseWriter, r *http.Request) {
