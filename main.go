@@ -72,16 +72,16 @@ func main() {
 
 	http.Handle("/", m)
 
-	int := ":" + strconv.Itoa(gcfg.port)
+	i := ":" + strconv.Itoa(gcfg.port)
 	p := strconv.Itoa(gcfg.port)
 	mesg := "; please visit http://127.0.0.1:" + p
 	if gcfg.private {
-		int = "localhost" + int
+		i = "localhost" + i
 		log.Printf("listens on 127.0.0.1@" + p + mesg)
 	} else {
 		log.Printf("listens on 0.0.0.0@" + p + mesg)
 	}
-	if err := http.ListenAndServe(int, nil); err != nil {
+	if err := http.ListenAndServe(i, nil); err != nil {
 		log.Fatal(err)
 	}
 }
