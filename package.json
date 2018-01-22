@@ -19,6 +19,6 @@
   "dependencies": {
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "jquery":"2.2.0"
+    "jquery":"3.0.0"
   }
 }
